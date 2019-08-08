@@ -1,31 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SeassonDisplay from './SeassonDisplay';
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
+    state = {lat: null, errorMassege: ''}
 
-        this.state = {lat: null, errorMassege: ''};
+    componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(
-            (position) => {
-                this.setState({lat: position.coords.latitude});
-            },
-            (err) => {
-                this.setState({errorMassege: err.message})
-            }
+            position => this.setState({lat: position.coords.latitude}),
+            err => this.setState({errorMassege: err.message})
         );
     }
 
-    render() {
+    currentContext() {
         if(this.state.errorMassege && !this.state.lat) {
-            return <div>Error: {this.state.errorMassege}</div>
+            return <SeasonDisplay errorMassege={this.state.errorMassege} />
         }
         if(!this.state.errorMassege && this.state.lat) {
-            return <div>Latittude: {this.state.lat}</div>
+            return <SeasonDisplay lat={this.state.lat} />
         }
-        return <div>Loading...</div>
+        return <Spinner massege="Click allow for locate you"/>
+    }
+
+    render() {
+        return (
+            <div>
+                {this.currentContext()}
+            </div>
+        );
     }
 }
 
