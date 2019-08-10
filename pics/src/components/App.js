@@ -1,7 +1,7 @@
 import React from 'react';
 import ApiService from '../api/api.service';
 import SearchBar from './SearchBar';
-// import Gallary from './Gallary';
+import Gallary from './Gallary';
 
 /*
 API
@@ -22,7 +22,7 @@ class App extends React.Component {
         return (
             <div className="ui container" style={{marginTop: '10px'}}>
                 <SearchBar onTest={this.onSearchSubmit} />
-                <div>Found {this.state.images.length} Images</div>
+                <Gallary images={this.state.images} />
                 </div>
         );
     }
