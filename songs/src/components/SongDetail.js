@@ -6,18 +6,18 @@ class SongDetail extends React.Component {
 
 
     render() {
-        console.log(this.props)
-        return (
-            <div>
-                <h1>Song Detail</h1>
-                <p>{this.props}</p>
-            </div>
-        )
+        if(!this.props.song) {
+            return <div>Select a Song</div>
+        }
+        return <div>
+            <h1>Details For:</h1>
+            <p>Title: {this.props.song.title}</p>
+            <p>Length: {this.props.song.duration}</p>
+        </div>
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {song: state.selectedSong};
 }
 
