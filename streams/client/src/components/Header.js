@@ -15,11 +15,8 @@ class Header extends React.Component {
                     New
                 </Link>
                 <div className="right menu">
-                  <Link to="/" className="ui item">
-                     Logout
-                 </Link>
+                <GoogleAuth />
                  </div>
-                 <GoogleAuth />
                 </div>
         )
     }
