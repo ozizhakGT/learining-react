@@ -59,11 +59,12 @@ export const deleteStream = id => async dispatch => {
         payload: id
     })
 }
-export const editStreams = (id, formValues) => async dispatch => { 
-    const response = await ApiService.put(`/streams${id}`, formValues);
+export const editStream = (id, formValues) => async dispatch => { 
+    const response = await ApiService.patch(`/streams/${id}`, formValues);
 
     dispatch({
         type: EDIT_STREAM,
         payload: response.data
     })
+    history.push('/')
 }
