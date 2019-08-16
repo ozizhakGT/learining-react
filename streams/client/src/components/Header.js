@@ -11,8 +11,11 @@ class Header extends React.Component {
                 <Link to="/" className="active item">
                     StreaMe
                 </Link>
-                <Link to="stream/new" className="item">
+                <Link to="/stream/new" className="item">
                     New
+                </Link>
+                <Link to="/stream/edit" className="item">
+                    Edit
                 </Link>
                 <div className="right menu">
                 <GoogleAuth />

@@ -1,3 +1,22 @@
 {
-  "streams": []
+  "streams": [
+    {
+      "title": "Online Game",
+      "description": "Games",
+      "userId": "112586349953934479233",
+      "id": 1
+    },
+    {
+      "title": "sport stream",
+      "description": "Sport",
+      "userId": "112586349953934479233",
+      "id": 2
+    },
+    {
+      "title": "sdv",
+      "description": "sdv",
+      "userId": "112586349953934479233",
+      "id": 3
+    }
+  ]
 }

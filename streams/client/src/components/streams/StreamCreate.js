@@ -6,7 +6,6 @@ import { createStream } from '../../actions';
 
 class StreamCreate extends React.Component {
     renderInput = ({input, label, meta}) => {
-        console.log(meta)
         return (
             <div className="field">
                 <label>{label}</label>
@@ -32,7 +31,7 @@ class StreamCreate extends React.Component {
                 <Field name="title" component={this.renderInput} label="Enter Title" />
                 <br />
                 <Field name="description" component={this.renderInput} label="Enter Description" />
-                <button class="ui button primary">Submit</button>
+                <button className="ui button primary">Submit</button>
             </form>
         )
     }
